@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
+import { FaHome, FaSignOutAlt } from 'react-icons/fa';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -13,15 +14,15 @@ const Navbar = () => {
 
 
     const menuItems = <>
-        <li><Link to='/home' className='text-xl font-bold'>Home</Link></li>
+        <li><Link to='/home' className='text-xl font-bold'><span><FaHome /></span><span>Home</span></Link></li>
         <li><Link to='/home' className='text-xl font-bold'>Cotact</Link></li>
         {
-            user ? <li><button onClick={logout} className='text-xl font-bold'>Logout</button></li> : <li><Link to='/login' className='text-xl font-bold'>Login</Link></li>
+            user ? <li><button onClick={logout} className='text-xl font-bold'>Logout<span><FaSignOutAlt /></span></button></li> : <li><Link to='/login' className='text-xl font-bold'>Login</Link></li>
         }
         <li><Link to='/register' className='text-xl font-bold'>Register</Link></li>
     </>
     return (
-        <div className="navbar px-12 sticky top-0 z-10">
+        <div className="navbar px-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">

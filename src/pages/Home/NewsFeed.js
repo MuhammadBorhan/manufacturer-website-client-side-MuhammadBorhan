@@ -6,18 +6,18 @@ import { FaAddressBook, FaPhoneVolume, FaMailBulk } from 'react-icons/fa';
 const NewsFeed = () => {
     const [user] = useAuthState(auth);
     return (
-        <div className='py-8 px-12'>
-            <h3 className='text-center w-48 mx-auto py-2 font-bold text-3xl border-b-2 mb-4'>News Feed</h3>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-center'>
+        <div className='py-8 px-12 bg-black opacity-80'>
+            <h3 className='text-center text-indigo-700 w-48 mx-auto py-2 font-bold text-3xl border-b-2 mb-4'>News Feed</h3>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-center text-white'>
                 <div>
                     <p className='text-3xl mb-3'>Newsletter</p>
                     <p>By subscribing to our company newsletter you will always be up-to-date on our deals and laptop inventory.</p>
                     <form>
-                        <input type="text" placeholder="Name" className="input input-bordered my-2 w-full max-w-xs" />
+                        <input type="text" placeholder="Name" className="input input-bordered text-black my-2 w-full max-w-xs" />
                         <br />
-                        <input type="text" placeholder="Email" className="input input-bordered mb-2 w-full max-w-xs" />
+                        <input type="text" placeholder="Email" className="input input-bordered text-black mb-2 w-full max-w-xs" />
                         <br />
-                        <input className='btn btn-info' type="submit" value="Subscribe" />
+                        <input className='btn btn-primary font-bold text-white' type="submit" value="Subscribe" />
                     </form>
                 </div>
                 <div>

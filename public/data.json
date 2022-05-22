@@ -15,7 +15,7 @@
         "minQuantity": 50,
         "avlbQuantity": 120,
         "description": "A laptop combines the components, inputs, outputs, and capabilities of a desktop computer, including the display screen, small speakers, a keyboard.",
-        "img": "https://i.ibb.co/hC7DH5X/door-handle.jpg"
+        "img": "https://i.ibb.co/L8Sy9HB/windshield-parts.jpg"
     },
     {
         "name": "Refurbished Dell Latitude E6430 14",
@@ -42,7 +42,7 @@
         "minQuantity": 50,
         "avlbQuantity": 120,
         "description": "If you are going to shop for either Acer Aspire 5 Slim vs Acer Swift 3 laptop, we will provide details about them that will help you choose the right one.",
-        "img": "https://i.ibb.co/HhbHpXV/radiator-part.jpg"
+        "img": "https://i.ibb.co/LrM9kFH/suspension.png"
     },
     {
         "name": "ASUS VivoBook",
@@ -51,7 +51,7 @@
         "minQuantity": 50,
         "avlbQuantity": 120,
         "description": "Asus beat the drum loudest for the ZenBook Flip 14, which it calls “the world’s thinnest 2-in-1 laptop with high-performance discrete graphics.",
-        "img": "https://i.ibb.co/HgZ0BWc/rear-view-mirror.jpg"
+        "img": "https://i.ibb.co/wyDcZjp/tailgate.jpg"
     },
     {
         "name": "Apple laptop",
@@ -60,7 +60,7 @@
         "minQuantity": 50,
         "avlbQuantity": 120,
         "description": "They come in different models such as the Intel 2.33GHz Core 2 Duo seen in the Apple MacBook pro, the 2.16Hz white Macbook, and others, all combining speed and design.",
-        "img": "https://i.ibb.co/LrM9kFH/suspension.png"
+        "img": "https://i.ibb.co/HhbHpXV/radiator-part.jpg"
     },
     {
         "name": "Avita Essential Laptop",
@@ -69,7 +69,7 @@
         "minQuantity": 50,
         "avlbQuantity": 120,
         "description": "The Avita Essential Price is set for India at Rs. 17,990. If you want to book this then it is available on the Amazon shopping site.",
-        "img": "https://i.ibb.co/wyDcZjp/tailgate.jpg"
+        "img": "https://i.ibb.co/hC7DH5X/door-handle.jpg"
     },
     {
         "name": "Avita Essential Laptop",
@@ -96,6 +96,6 @@
         "minQuantity": 50,
         "avlbQuantity": 120,
         "description": "The Avita Essential Price is set for India at Rs. 17,990. If you want to book this then it is available on the Amazon shopping site.",
-        "img": "https://i.ibb.co/L8Sy9HB/windshield-parts.jpg"
+        "img": "https://i.ibb.co/HgZ0BWc/rear-view-mirror.jpg"
     }
 ]

@@ -5,7 +5,7 @@ const Summary = () => {
     return (
         <div className='py-8 border-b-2'>
             <div className='w-3/4 mx-auto text-center'>
-                <h2 className='text-sky-500 text-3xl font-bold mb-3'>Industries Justification</h2>
+                <h2 className='text-sky-500 text-3xl font-bold mb-3'>Manufacturer Justification</h2>
                 <p className='text-xl font-bold'>We are a Leader in the Manufacturing Business For Several Industries.</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center py-8'>

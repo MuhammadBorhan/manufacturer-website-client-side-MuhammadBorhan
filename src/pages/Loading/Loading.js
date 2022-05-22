@@ -2,8 +2,8 @@ import React from 'react';
 
 const Loading = () => {
     return (
-        <div className='flex justify-center mt-52'>
-            <button className="btn btn-error text-white font-bold loading">loading</button>
+        <div className='flex justify-center mt-20'>
+            <button className="btn btn-error text-white font-bold loading block mx-auto">loading</button>
         </div>
     );
 };

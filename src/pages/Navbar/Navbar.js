@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
-import { FaHome, FaSignOutAlt, FaLock } from 'react-icons/fa';
+import { FaHome, FaSignOutAlt, FaLock, FaSignInAlt } from 'react-icons/fa';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -19,7 +19,7 @@ const Navbar = () => {
         {
             user ? <li><button onClick={logout} className='text-xl font-bold'>Logout<span><FaSignOutAlt /></span></button></li> : <li><Link to='/login' className='text-xl font-bold'>Login<span><FaLock /></span></Link></li>
         }
-        <li><Link to='/register' className='text-xl font-bold'>Register</Link></li>
+        <li><Link to='/register' className='text-xl font-bold'>Register<FaSignInAlt /></Link></li>
     </>
     return (
         <div className="navbar px-12">

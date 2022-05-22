@@ -1,15 +1,27 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../Firebase/firebase.init';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+    }
+
+
+
     const menuItems = <>
         <li><Link to='/home' className='text-xl font-bold'>Home</Link></li>
         <li><Link to='/home' className='text-xl font-bold'>Cotact</Link></li>
-        <li><Link to='/login' className='text-xl font-bold'>Login</Link></li>
+        {
+            user ? <button onClick={logout} className='text-xl font-bold'>Logout</button> : <li><Link to='/login' className='text-xl font-bold'>Login</Link></li>
+        }
         <li><Link to='/register' className='text-xl font-bold'>Register</Link></li>
     </>
     return (
-        <div className="navbar px-12">
+        <div className="navbar px-12 sticky top-0 z-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -25,6 +37,9 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
+            </div>
+            <div>
+                <p className='text-xl text-indigo-600 font-bold'>{user?.displayName}</p>
             </div>
         </div>
     );

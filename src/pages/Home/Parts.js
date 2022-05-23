@@ -10,7 +10,11 @@ const Parts = () => {
             <h1 className='text-center text-indigo-500 font-bold text-3xl'>Total Parts: {products.length}</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
-                    products.length === 0 ? <p className='text-center'><Loading></Loading></p> : products.slice(0, 6).map(product => <Part product={product}></Part>)
+                    products.length === 0 ? <p className='text-center'><Loading></Loading></p> : products.slice(-6).map(product =>
+                        <Part
+                            key={product._id}
+                            product={product}
+                        ></Part>)
                 }
             </div>
         </div>

@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useParams } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 
 const BuyNow = () => {
     const [user] = useAuthState(auth)
+    const { id } = useParams();
+    const [product, setProduct] = useState({});
+    const [relode, setRelode] = useState(false);
+    const { _id, name, img, price, minQuantity, avlbQuantity } = product;
+
+
+    useEffect(() => {
+        const url = `http://localhost:5000/product/${id}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setProduct(data);
+                setRelode(!relode)
+            })
+    }, [id, relode, product]);
     return (
         <div className='py-12'>
             <div className="card w-96 bg-base-100 mx-auto shadow-xl">
                 <figure className="px-10 pt-10">
-                    <img src='buynow' alt="Shoes" className="rounded-xl" />
+                    <img src={img} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-center text-center">
-                    <h2 className="card-title">Name</h2>
-                    <p>Minimum Quantity: </p>
-                    <p>Available Quantity: </p>
-                    <p>Per unit price:</p>
+                    <h2 className="card-title">{name}</h2>
+                    <p>Minimum Quantity: {minQuantity}</p>
+                    <p>Available Quantity: {avlbQuantity}</p>
+                    <p>Per unit price: ${price}</p>
                 </div>
                 <label for="confirm_purchase" className="btn modal-button">Confirm Order</label>
             </div>

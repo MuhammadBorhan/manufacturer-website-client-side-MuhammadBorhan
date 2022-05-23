@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/buynow' element={<PrivateRoute><BuyNow></BuyNow></PrivateRoute>}></Route>
+        <Route path='/buynow/:id' element={<PrivateRoute><BuyNow></BuyNow></PrivateRoute>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

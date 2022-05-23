@@ -16,7 +16,7 @@ const BuyNow = () => {
                     <p>Available Quantity: </p>
                     <p>Per unit price:</p>
                 </div>
-                <label for="confirm_purchase" className="btn modal-button">Confirm Purchase</label>
+                <label for="confirm_purchase" className="btn modal-button">Confirm Order</label>
             </div>
 
             <div>

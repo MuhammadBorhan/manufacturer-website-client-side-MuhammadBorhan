@@ -1,30 +1,33 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase/firebase.init';
 
 const BuyNow = () => {
+    const [user] = useAuthState(auth)
     return (
         <div className='py-12'>
-            <div class="card w-96 bg-base-100 mx-auto shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src='buynow' alt="Shoes" class="rounded-xl" />
+            <div className="card w-96 bg-base-100 mx-auto shadow-xl">
+                <figure className="px-10 pt-10">
+                    <img src='buynow' alt="Shoes" className="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title">Name</h2>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title">Name</h2>
                     <p>Minimum Quantity: </p>
                     <p>Available Quantity: </p>
                     <p>Per unit price:</p>
-                    <p>Description</p>
                 </div>
-                <label for="confirm_purchase" class="btn modal-button">Confirm Purchase</label>
+                <label for="confirm_purchase" className="btn modal-button">Confirm Purchase</label>
             </div>
 
             <div>
-                <input type="checkbox" id="confirm_purchase" class="modal-toggle" />
-                <div class="modal modal-bottom sm:modal-middle">
-                    <div class="modal-box">
-                        <h3 class="font-bold text-lg">Congratulations random Interner user!</h3>
-                        <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-                        <div class="modal-action">
-                            <label for="confirm_purchase" class="btn">Confirm</label>
+                <input type="checkbox" id="confirm_purchase" className="modal-toggle" />
+                <div className="modal modal-bottom sm:modal-middle">
+                    <div className="modal-box">
+                        <h3 className="font-bold text-lg">Product name</h3>
+                        <input type="text" disabled value={user.displayName} className="input input-bordered w-full max-w-xs text-xl font-bold mb-2" />
+                        <input type="text" disabled value={user.email} className="input input-bordered w-full max-w-xs text-xl font-bold" />
+                        <div className="modal-action">
+                            <label for="confirm_purchase" className="btn">Confirm</label>
                         </div>
                     </div>
                 </div>

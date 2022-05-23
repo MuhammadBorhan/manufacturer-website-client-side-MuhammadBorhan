@@ -12,8 +12,8 @@ const Part = ({ product }) => {
                 <h2 class="card-title">{name}</h2>
                 <p>Minimum Quantity: {minQuantity}</p>
                 <p>Available Quantity: {avlbQuantity}</p>
-                <p>Per unit price: {price}</p>
-                <p>{description}</p>
+                <p>Per unit price: ${price}</p>
+                <p>{description.length >= 30 ? description.slice(0, 80) + '....' : description}</p>
                 <div class="card-actions">
                     <Link to='/buynow'><button class="btn btn-primary">Buy Now</button></Link>
                 </div>

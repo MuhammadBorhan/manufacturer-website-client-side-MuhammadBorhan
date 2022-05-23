@@ -17,6 +17,7 @@ const Navbar = () => {
         <li><Link to='/home' className='text-xl font-bold'><span><FaHome /></span><span>Home</span></Link></li>
         <li><Link to='/blogs' className='text-xl font-bold'>Blogs</Link></li>
         <li><Link to='/portfolio' className='text-xl font-bold'>Portfolio</Link></li>
+        <li><Link to='/dashboard' className='text-xl font-bold'>Dashboard</Link></li>
         {
             user ? <li><button onClick={logout} className='text-xl font-bold'>Logout<span><FaSignOutAlt /></span></button></li> : <li><Link to='/login' className='text-xl font-bold'>Login<span><FaLock /></span></Link></li>
         }

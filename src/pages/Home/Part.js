@@ -10,9 +10,9 @@ const Part = ({ product }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>
-                <p>Minimum Quantity: {minQuantity}</p>
-                <p>Available Quantity: {avlbQuantity}</p>
-                <p>Per unit price: ${price}</p>
+                <p><span className='font-bold'>Minimum Quantity:</span> <span className='font-bold text-xl'>50</span></p>
+                <p><span className='font-bold'>Available Quantity:</span> <span className='text-xl font-bold'>{avlbQuantity}</span></p>
+                <p><span className='font-bold'>Per unit price:</span> <span className='font-bold text-xl'>${price}</span></p>
                 <p>{description.length >= 30 ? description.slice(0, 80) + '....' : description}</p>
                 <div className="card-actions">
                     <Link to={`/buynow/${_id}`}><button className="btn btn-primary">Buy Now</button></Link>

@@ -15,7 +15,8 @@ const Navbar = () => {
 
     const menuItems = <>
         <li><Link to='/home' className='text-xl font-bold'><span><FaHome /></span><span>Home</span></Link></li>
-        <li><Link to='/home' className='text-xl font-bold'>Cotact</Link></li>
+        <li><Link to='/blogs' className='text-xl font-bold'>Blogs</Link></li>
+        <li><Link to='/portfolio' className='text-xl font-bold'>Portfolio</Link></li>
         {
             user ? <li><button onClick={logout} className='text-xl font-bold'>Logout<span><FaSignOutAlt /></span></button></li> : <li><Link to='/login' className='text-xl font-bold'>Login<span><FaLock /></span></Link></li>
         }
@@ -32,7 +33,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-3xl">Automotive Parts Manufacturing</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-3xl">Automotive Parts</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

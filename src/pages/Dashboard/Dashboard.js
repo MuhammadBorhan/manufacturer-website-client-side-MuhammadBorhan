@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { FaUserTie } from 'react-icons/fa';
 
 const Dashboard = () => {
     return (
@@ -7,18 +8,18 @@ const Dashboard = () => {
             <div className="drawer drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
-                    <div className='flex'>
+                    <div className='flex items-center'>
                         <label for="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open</label>
-                        <h1 className='text-3xl ml-6 md:ml-0 text-purple-700 font-bold'>Dashboard</h1>
+                        <h1 className='text-3xl ml-6 md:ml-0 text-purple-700 font-bold flex gap-2'><span><FaUserTie /></span>Dashboard</h1>
                     </div>
                     <Outlet></Outlet>
                 </div>
                 <div className="drawer-side">
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-56 bg-base-100 text-base-content">
-                        <li><Link to='/dashboard'>My Orders</Link></li>
-                        <li><Link to='/dashboard/addreview'>Add A Review</Link></li>
-                        <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
+                        <button className='btn btn-primary'> <li><Link to='/dashboard'>My Orders</Link></li></button>
+                        <button className='btn btn-secondary my-2'><li><Link to='/dashboard/addreview'>Add A Review</Link></li></button>
+                        <button className='btn btn-accent'><li><Link to='/dashboard/myprofile'>My Profile</Link></li></button>
                     </ul>
 
                 </div>

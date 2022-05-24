@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 import useProducts from '../CustomHook/useProducts';
 import { toast } from 'react-toastify';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const BuyNow = () => {
     const [user] = useAuthState(auth)
@@ -120,7 +121,7 @@ const BuyNow = () => {
                     <p><span className='font-bold'>Per unit price:</span> <span className='font-bold text-xl'>${price}</span></p>
                     <p className='font-bold text-indigo-400'>{description}</p>
                 </div>
-                <label disabled={minQuantity < 50 || avlbQuantity > 121} for="confirm_purchase" className="btn modal-button">go to purchase</label>
+                <label disabled={minQuantity < 50 || avlbQuantity > 121} for="confirm_purchase" className="btn modal-button"><span className='pr-3 text-2xl'><FaShoppingCart /></span> go to purchase</label>
             </div>
 
             <div>

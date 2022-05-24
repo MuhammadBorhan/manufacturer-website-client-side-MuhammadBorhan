@@ -1,9 +1,88 @@
 import React from 'react';
+import myself from '../../images/myself.png';
+import './Portfolio.css';
 
 const Portfolio = () => {
     return (
-        <div className='px-12'>
-            <h3 className='text-center text-3xl mt-24'>This is portfolio page</h3>
+        <div className='px-12 py-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+                <div class="card card-compact bg-base-100 shadow-xl">
+                    <figure><img src={myself} alt="Shoes" /></figure>
+                    <div class="text-center p-4">
+                        <p><span className='text-2xl font-bold'>Name:</span> <span className='text-xl font-bold'>Md Borhan Uddin</span></p>
+                        <p><span className='text-2xl font-bold'>Email:</span> <span className='text-xl font-bold'>mdborhanuddinmajumder058@gmail.com</span></p>
+                    </div>
+                </div>
+                <div className='text-center'>
+                    <h2 className='text-2xl font-bold text-lime-700 mb-6'>My Educational Background</h2>
+                    <div class="overflow-x-auto">
+                        <table class="table w-full">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Institute</th>
+                                    <th>Year / Borad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SSC</td>
+                                    <td>Monohorgonj Govt. High School & College</td>
+                                    <td>2013 (Cumilla)</td>
+                                </tr>
+                                <tr>
+                                    <td>HSC</td>
+                                    <td>Cumilla Residential College</td>
+                                    <td>2015 (Cumilla)</td>
+                                </tr>
+                                <tr>
+                                    <td>BSc in CSE</td>
+                                    <td>World University of Bangladesh</td>
+                                    <td>2021 (Dhaka)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div className='text-center py-4 mt-4'>
+                <h2 className='text-2xl font-bold text-lime-700 mb-6 shadow-lg py-2 w-40 mx-auto'>My Skill</h2>
+                <div className='grid grid-cols-1 md:grid-cols-2'>
+                    <div>
+                        <h1 className='text-xl font-bold mb-5 text-orange-500'>Web Design</h1>
+                        <div className='grid grid-cols-1 gap-5 justify-items-center'>
+                            <p>HTML</p>
+                            <progress class="progress progress-primary w-56" value="95" max="100"></progress>
+                            <p>CSS</p>
+                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <p>Tailwind</p>
+                            <progress class="progress progress-primary w-56" value="70" max="100"></progress>
+                            <p>Bootstrap</p>
+                            <progress class="progress progress-primary w-56" value="90" max="100"></progress>
+                        </div>
+                    </div>
+                    <div className='mt-8 md:mt-0'>
+                        <h1 className='text-xl font-bold mb-5 text-orange-500'>Web Development</h1>
+                        <div className='grid grid-cols-1 gap-5 justify-items-center'>
+                            <p>Javascript</p>
+                            <progress class="progress progress-primary w-56" value="60" max="100"></progress>
+                            <p>React.js</p>
+                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <p>node.js</p>
+                            <progress class="progress progress-primary w-56" value="50" max="100"></progress>
+                            <p>mongodb</p>
+                            <progress class="progress progress-primary w-56" value="50" max="100"></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='text-center mt-8'>
+                <h4 className='text-xl font-bold mb-3'>My Completed Project</h4>
+                <p><a target='_blank' className='underline' href="https://scintillating-quokka-d477fd.netlify.app/">https://scintillating-quokka-d477fd.netlify.app/</a></p>
+                <p><a target='_blank' className='underline my-4' href="https://sparkly-travesseiro-3c9d55.netlify.app/">https://sparkly-travesseiro-3c9d55.netlify.app/</a></p>
+                <p><a target='_blank' className='underline' href="https://velvety-palmier-679f13.netlify.app/">https://velvety-palmier-679f13.netlify.app/</a></p>
+
+            </div>
         </div>
     );
 };

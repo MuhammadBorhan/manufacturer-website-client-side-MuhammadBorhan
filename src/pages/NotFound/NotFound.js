@@ -1,11 +1,11 @@
 import React from 'react';
+import Opps from '../../images/404.jpg';
+import './NotFound.css';
 
 const NotFound = () => {
     return (
-        <div className='text-center mt-40 mb-48'>
-            <p className='text-red-600 text-3xl font-bold'>Error...!</p>
-            <h1 className='text-red-600 text-6xl font-bold'>404</h1>
-            <p className='text-red-600 text-3xl font-bold'>Page Not Found</p>
+        <div className='flex justify-center items-center not-found'>
+            <img className='' src={Opps} alt="" />
         </div>
     );
 };

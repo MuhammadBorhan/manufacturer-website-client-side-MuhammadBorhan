@@ -14,7 +14,6 @@ const AllOrders = () => {
             <h4 className='mt-5 mb-3'><span className='text-2xl font-bold'>All orders:</span> <span className='text-3xl font-bold text-purple-900'>{allOrders.length}</span></h4>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
                 {
-                    // allOrders.map(allorder => <TableRow></TableRow>)
                     allOrders.map(order => <div key={order._id} className='bg-slate-600 p-4 text-white'>
                         <div> <p>{order.product}</p>
                             <p>{order.name}</p>

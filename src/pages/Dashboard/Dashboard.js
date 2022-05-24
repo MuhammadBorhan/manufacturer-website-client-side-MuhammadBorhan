@@ -17,12 +17,12 @@ const Dashboard = () => {
                 <div className="drawer-side">
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-56 bg-base-100 text-base-content">
-                        <button className='btn btn-primary'> <li><Link to='/dashboard'>My Orders</Link></li></button>
-                        <button className='btn btn-secondary my-2'><li><Link to='/dashboard/addreview'>Add A Review</Link></li></button>
-                        <button className='btn btn-accent'><li><Link to='/dashboard/myprofile'>My Profile</Link></li></button>
-                        <button className='btn btn-success my-2'><li><Link to='/dashboard/allorder'>All OrderS</Link></li></button>
-                        <button className='btn btn-secondary'><li><Link to='/dashboard/addproducts'>Add Products</Link></li></button>
-                        <button className='btn btn-accent mt-2'><li><Link to='/dashboard/allproducts'>Manage Products</Link></li></button>
+                        <button className='btn btn-primary font-bold'> <li><Link to='/dashboard'>My Orders</Link></li></button>
+                        <button className='btn btn-secondary my-2 font-bold'><li><Link to='/dashboard/addreview'>Add A Review</Link></li></button>
+                        <button className='btn btn-accent text-white font-bold'><li><Link to='/dashboard/myprofile'>My Profile</Link></li></button>
+                        <button className='btn btn-success my-2 text-white font-bold'><li><Link to='/dashboard/allorder'>All OrderS</Link></li></button>
+                        <button className='btn btn-secondary font-bold'><li><Link to='/dashboard/addproducts'>Add Products</Link></li></button>
+                        <button className='btn btn-accent mt-2 text-white font-bold'><li><Link to='/dashboard/allproducts'>Manage All Products</Link></li></button>
                     </ul>
 
                 </div>

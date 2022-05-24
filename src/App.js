@@ -13,7 +13,9 @@ import Portfolio from './pages/Portfolio/Portfolio';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import MyOrder from './pages/Dashboard/MyOrder';
+import AddReview from './pages/Dashboard/AddReview';
+import MyProfile from './pages/Dashboard/MyProfile';
 function App() {
   return (
     <div>
@@ -23,7 +25,11 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
+        <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path='addreview' element={<AddReview></AddReview>}></Route>
+          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+        </Route>
         <Route path='/buynow/:id' element={<PrivateRoute><BuyNow></BuyNow></PrivateRoute>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>

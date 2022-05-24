@@ -6,17 +6,17 @@ const Portfolio = () => {
     return (
         <div className='px-12 py-8'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
-                <div class="card card-compact bg-base-100 shadow-xl">
+                <div className="card card-compact bg-base-100 shadow-xl">
                     <figure><img src={myself} alt="Shoes" /></figure>
-                    <div class="text-center p-4">
+                    <div className="text-center p-4">
                         <p><span className='text-2xl font-bold'>Name:</span> <span className='text-xl font-bold'>Md Borhan Uddin</span></p>
                         <p><span className='text-2xl font-bold'>Email:</span> <span className='text-xl font-bold'>mdborhanuddinmajumder058@gmail.com</span></p>
                     </div>
                 </div>
                 <div className='text-center'>
                     <h2 className='text-2xl font-bold text-lime-700 mb-6'>My Educational Background</h2>
-                    <div class="overflow-x-auto">
-                        <table class="table w-full">
+                    <div className="overflow-x-auto">
+                        <table className="table w-full">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -52,26 +52,26 @@ const Portfolio = () => {
                         <h1 className='text-xl font-bold mb-5 text-orange-500'>Web Design</h1>
                         <div className='grid grid-cols-1 gap-5 justify-items-center'>
                             <p>HTML</p>
-                            <progress class="progress progress-primary w-56" value="95" max="100"></progress>
+                            <progress className="progress progress-primary w-56" value="95" max="100"></progress>
                             <p>CSS</p>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                             <p>Tailwind</p>
-                            <progress class="progress progress-primary w-56" value="70" max="100"></progress>
+                            <progress className="progress progress-primary w-56" value="70" max="100"></progress>
                             <p>Bootstrap</p>
-                            <progress class="progress progress-primary w-56" value="90" max="100"></progress>
+                            <progress className="progress progress-primary w-56" value="90" max="100"></progress>
                         </div>
                     </div>
                     <div className='mt-8 md:mt-0'>
                         <h1 className='text-xl font-bold mb-5 text-orange-500'>Web Development</h1>
                         <div className='grid grid-cols-1 gap-5 justify-items-center'>
                             <p>Javascript</p>
-                            <progress class="progress progress-primary w-56" value="60" max="100"></progress>
+                            <progress className="progress progress-primary w-56" value="60" max="100"></progress>
                             <p>React.js</p>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                             <p>node.js</p>
-                            <progress class="progress progress-primary w-56" value="50" max="100"></progress>
+                            <progress className="progress progress-primary w-56" value="50" max="100"></progress>
                             <p>mongodb</p>
-                            <progress class="progress progress-primary w-56" value="50" max="100"></progress>
+                            <progress className="progress progress-primary w-56" value="50" max="100"></progress>
                         </div>
                     </div>
                 </div>

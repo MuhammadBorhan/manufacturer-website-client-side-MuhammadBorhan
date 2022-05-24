@@ -41,9 +41,9 @@ const Navbar = () => {
                     {menuItems}
                 </ul>
             </div>
-            <div>
+            {/*  <div>
                 <p className='text-xl text-indigo-600 font-bold'>{user?.displayName}</p>
-            </div>
+            </div> */}
         </div>
     );
 };

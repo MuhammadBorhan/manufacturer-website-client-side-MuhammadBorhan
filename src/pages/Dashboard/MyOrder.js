@@ -16,20 +16,17 @@ const MyOrder = () => {
     }, [user]);
 
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure?');
-        if (proceed) {
-            const url = `http://localhost:5000/myorder/${id}`;
-            fetch(url, {
-                method: "DELETE"
+        const url = `http://localhost:5000/myorder/${id}`;
+        fetch(url, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const rest = myorders.filter(product => product._id !== id);
+                console.log(rest)
+                setMyorders(rest);
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    const rest = myorders.filter(product => product._id !== id);
-                    console.log(rest)
-                    setMyorders(rest);
-                })
-        }
     }
     return (
         <div>

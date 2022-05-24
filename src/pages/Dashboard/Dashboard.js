@@ -20,6 +20,9 @@ const Dashboard = () => {
                         <button className='btn btn-primary'> <li><Link to='/dashboard'>My Orders</Link></li></button>
                         <button className='btn btn-secondary my-2'><li><Link to='/dashboard/addreview'>Add A Review</Link></li></button>
                         <button className='btn btn-accent'><li><Link to='/dashboard/myprofile'>My Profile</Link></li></button>
+                        <button className='btn btn-success my-2'><li><Link to='/dashboard/allorder'>All OrderS</Link></li></button>
+                        <button className='btn btn-secondary'><li><Link to='/dashboard/addproducts'>Add Products</Link></li></button>
+                        <button className='btn btn-accent mt-2'><li><Link to='/dashboard/allproducts'>Manage Products</Link></li></button>
                     </ul>
 
                 </div>

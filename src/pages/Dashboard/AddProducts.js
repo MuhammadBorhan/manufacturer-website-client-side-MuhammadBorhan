@@ -36,14 +36,14 @@ const AddProducts = () => {
             <h1 className='mt-5 mb-3 text-center text-green-600 text-3xl font-bold'>Add products</h1>
             <div>
                 <form onSubmit={handleAdded} className='grid grid-cols-1 gap-4 justify-items-center'>
-                    <input type="text" name='name' placeholder="Product Name" class="input input-bordered w-full max-w-xs" />
-                    <input type="email" name='email' value={user.email} class="input input-bordered w-full max-w-xs" />
-                    <input type="text" name='price' placeholder="Price" class="input input-bordered w-full max-w-xs" />
-                    <input type="text" name='minQuantity' placeholder="MinQuantity" class="input input-bordered w-full max-w-xs" />
-                    <input type="text" name='avlbQuantity' placeholder="AvlbQuantity" class="input input-bordered w-full max-w-xs" />
-                    <textarea name='description' class="textarea textarea-bordered w-full max-w-xs" placeholder="Description"></textarea>
-                    <input type="text" name='img' placeholder="Photo URL" class="input input-bordered w-full max-w-xs" />
-                    <input type="submit" value='Add Item' class="btn input-bordered w-full max-w-xs" />
+                    <input type="text" name='name' placeholder="Product Name" className="input input-bordered w-full max-w-xs" />
+                    <input type="email" name='email' value={user.email} className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='price' placeholder="Price" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" disabled name='minQuantity' value='Min order quantity 20' className="input input-bordered text-xl font-bold w-full max-w-xs" />
+                    <input type="text" name='avlbQuantity' placeholder="Available Quantity more than 20" className="input input-bordered w-full max-w-xs" />
+                    <textarea name='description' className="textarea textarea-bordered w-full max-w-xs" placeholder="Description"></textarea>
+                    <input type="text" name='img' placeholder="Photo URL" className="input input-bordered w-full max-w-xs" />
+                    <input type="submit" value='Add Item' className="btn input-bordered w-full max-w-xs" />
                 </form>
             </div>
         </div>

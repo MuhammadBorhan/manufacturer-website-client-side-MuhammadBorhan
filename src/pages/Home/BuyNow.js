@@ -13,6 +13,7 @@ const BuyNow = () => {
     const [product, setProduct] = useState({});
     const [relode, setRelode] = useState(false);
     const { _id, name, img, price, minQuantity, avlbQuantity, description } = product;
+    const [order, setOrder] = useState(20);
 
 
     useEffect(() => {
@@ -27,13 +28,16 @@ const BuyNow = () => {
 
 
     const handleIncrease = (product) => {
-        const exist = products.find(pd => pd._id === product._id)
-        if (exist.avlbQuantity === 121) {
-            return toast("Quantity not more than available quantity");
+        if (avlbQuantity < 1) {
+            return toast("Available quantity not less than 1");
+        } else {
+
+            setOrder(order + 1)
         }
+        const exist = products.find(pd => pd._id === product._id)
         if (exist) {
-            exist.minQuantity = exist.minQuantity + 1;
-            const increseQuantity = exist.minQuantity;
+            exist.avlbQuantity = parseInt(exist.avlbQuantity) - 1;
+            const increseQuantity = exist.avlbQuantity;
 
             const url = `http://localhost:5000/product/${id}`;
             fetch(url, {
@@ -52,14 +56,16 @@ const BuyNow = () => {
 
     let errorss;
     const handleReduce = (product) => {
-        const exist = products.find(pd => pd._id === product._id)
-        if (exist.minQuantity <= 49) {
-            return toast("Quantity minimum select 50");
-        }
-        if (exist) {
-            exist.minQuantity = exist.minQuantity - 1;
-            const reduceQuantity = exist.minQuantity;
+        if (order <= 19) {
+            return toast("Minimum order quantity 20");
+        } else {
 
+            setOrder(order - 1)
+        }
+        const exist = products.find(pd => pd._id === product._id)
+        if (exist) {
+            exist.avlbQuantity = parseInt(exist.avlbQuantity) + 1;
+            const reduceQuantity = exist.avlbQuantity;
             const url = `http://localhost:5000/product/${id}`;
             fetch(url, {
                 method: 'PUT',
@@ -113,15 +119,14 @@ const BuyNow = () => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
-                    <p><span className='font-bold'>Minimum Quantity:</span> <span className='font-bold text-xl'>50</span></p>
                     <p><span className='font-bold'>Available Quantity:</span> <span className='text-xl font-bold'>{avlbQuantity}</span></p>
-                    <p><span className='font-bold'>Order Quantity:</span> <span className='font-bold text-xl'>{minQuantity}</span></p>
-                    <p><button onClick={() => handleReduce(product)} className='btn btn-sm text-3xl'>-</button><span className='text-2xl font-bold mx-3'>{minQuantity} </span><button onClick={() => handleIncrease(product)} disabled={minQuantity === 120} className='btn btn-sm text-3xl'>+</button></p>
+                    <p><span className='font-bold'>Order Quantity:</span> <span className='font-bold text-xl'>{order}</span></p>
+                    <p><button onClick={() => handleReduce(product)} className='btn btn-sm text-3xl'>-</button><span className='text-2xl font-bold mx-3'> </span><button onClick={() => handleIncrease(product)} className='btn btn-sm text-3xl'>+</button></p>
                     {errorss}
                     <p><span className='font-bold'>Per unit price:</span> <span className='font-bold text-xl'>${price}</span></p>
                     <p className='font-bold text-indigo-400'>{description}</p>
                 </div>
-                <label disabled={minQuantity < 50 || avlbQuantity > 121} for="confirm_purchase" className="btn modal-button"><span className='pr-3 text-2xl'><FaShoppingCart /></span> go to purchase</label>
+                <label disabled={order < 20 || avlbQuantity < 1} for="confirm_purchase" className="btn modal-button"><span className='pr-3 text-2xl'><FaShoppingCart /></span> go to purchase</label>
             </div>
 
             <div>
@@ -132,7 +137,7 @@ const BuyNow = () => {
                             <input type="text" name='product' disabled value={name} className="input input-bordered text-xl font-bold w-full max-w-xs" />
                             <input type="text" name='name' value={user.displayName} className="input input-bordered w-full max-w-xs text-xl font-bold" />
                             <input type="email" name='email' disabled value={user.email} className="input input-bordered w-full max-w-xs text-xl font-bold" />
-                            <input type="text" name='quantity' value={'Selected Quantity ' + minQuantity} className="input input-bordered text-xl font-bold w-full max-w-xs" />
+                            <input type="text" name='quantity' value={'Selected Quantity ' + order} className="input input-bordered text-xl font-bold w-full max-w-xs" />
                             <input type="text" name='address' placeholder="Address" className="input input-bordered w-full max-w-xs" />
                             <input type="text" name='phone' placeholder="Phone" className="input input-bordered w-full max-w-xs" />
                             <input type="submit" value='Confirm' className="btn btn-primary input-bordered w-full max-w-xs" />

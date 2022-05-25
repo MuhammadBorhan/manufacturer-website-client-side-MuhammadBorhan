@@ -34,7 +34,6 @@ const AllUsers = () => {
                                 <th></th>
                                 <th>User</th>
                                 <th>Make Admin</th>
-                                <th>Remove User</th>
                             </tr>
                         </thead>
                         <tbody>

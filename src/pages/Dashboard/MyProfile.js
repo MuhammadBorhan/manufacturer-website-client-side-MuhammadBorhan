@@ -5,13 +5,15 @@ import auth from '../../Firebase/firebase.init';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     const [profiles, setProfiles] = useState([]);
+    const [relode, setRelode] = useState(false);
     useEffect(() => {
         const url = `http://localhost:5000/profile`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProfiles(data))
+        setRelode(!relode)
 
-    }, []);
+    }, [relode]);
 
     const handleProfile = event => {
         event.preventDefault();
@@ -40,7 +42,7 @@ const MyProfile = () => {
     }
     return (
         <div>
-            <h4 className='mt-5 mb-3 text-center text-green-600 text-3xl font-bold'>My profile</h4>
+            <h4 className='mt-5 mb-3 text-center text-green-600 text-3xl font-bold'>Update profile</h4>
             <div>
                 <form onSubmit={handleProfile} className='grid grid-cols-1 gap-4 justify-items-center'>
                     <input type="text" name='name' value={user.displayName} disabled className="input input-bordered text-xl font-bold w-full max-w-xs" />
@@ -52,13 +54,17 @@ const MyProfile = () => {
                     <input type="submit" value='Update' className="btn input-bordered w-full max-w-xs" />
                 </form>
             </div>
-            <div>
-                <div>
+            <div className=' mt-4'>
+                <h4 className='mt-5 mb-3 text-center text-indigo-600 text-3xl font-bold'>Profile</h4>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                     {
-                        profiles.map(profile => <div key={profile._id} className='bg-slate-600 p-4 text-white'>
-                            <div>
-                                <p className='flex justify-center items-center gap-1'><span>{profile.name}</span></p>
+                        profiles.map(profile => <div key={profile._id} className='p-4'>
+                            <div className='bg-black text-white p-4 opacity-80'>
+                                <h2 class="">{profile.name}</h2>
                                 <p>{profile.email}</p>
+                                <p>Education Quality: {profile.education}</p>
+                                <p>District: {profile.district}</p>
+                                <p>Phone: {profile.phone}</p>
                             </div>
                         </div>)
                     }

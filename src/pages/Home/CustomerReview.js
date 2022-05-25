@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import Loading from '../Loading/Loading';
 
 const CustomerReview = () => {
     const [reviews, setReviews] = useState([]);
@@ -15,7 +16,7 @@ const CustomerReview = () => {
             <h1 className='mt-5 mb-3 text-center text-green-600 text-3xl font-bold'>Total Reviews: {reviews.length}</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-center'>
                 {
-                    reviews.map(review => <div key={review._id} className='bg-slate-600 p-4 text-white'>
+                    reviews.length === 0 ? <p className='text-center'><Loading></Loading></p> : reviews.map(review => <div key={review._id} className='bg-slate-600 p-4 text-white'>
                         <div>
                             <p className='flex justify-center items-center gap-1'><span>{review.value}</span> <span className='text-yellow-300'><FaStar /></span></p>
                             <p>{review.description}</p>

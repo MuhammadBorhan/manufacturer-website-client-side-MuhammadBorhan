@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
+import Loading from '../Loading/Loading';
 import TableRow from '../TableRow/TableRow';
 
 const MyOrder = () => {
@@ -31,11 +32,19 @@ const MyOrder = () => {
     return (
         <div>
             <h4 className='mt-5 mb-3'><span className='text-2xl font-bold'>My order:</span> <span className='text-3xl font-bold text-purple-900'>{myorders.length}</span></h4>
-            <div>
-                {
-                    myorders.map((myorder, index) => <TableRow key={myorder._id} handleDelete={handleDelete} index={index} myorder={myorder}></TableRow>)
-                }
-            </div>
+
+
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+                    <tbody>
+                        <div>
+                            {
+                                myorders.length === 0 ? <p className='text-center'><Loading></Loading></p> : myorders.map((myorder, index) => <TableRow key={myorder._id} handleDelete={handleDelete} index={index} myorder={myorder}></TableRow>)
+                            }
+                        </div>
+                    </tbody>
+                </table>
+            </div >
         </div>
     );
 };

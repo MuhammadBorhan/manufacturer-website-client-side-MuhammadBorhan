@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFlagCheckered, FaTasks, FaUsers, FaStar } from 'react-icons/fa';
+import { FaHandshake, FaMoneyBillAlt, FaCarCrash, FaStar } from 'react-icons/fa';
 
 const Summary = () => {
     return (
@@ -10,19 +10,19 @@ const Summary = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center py-8'>
                 <div>
-                    <p className='text-6xl text-blue-400 flex justify-center'><FaFlagCheckered /></p>
-                    <p className='text-5xl font-bold my-4'>50</p>
-                    <p className='text-xl text-blue-400 font-bold'>Countries</p>
+                    <p className='text-6xl text-blue-400 flex justify-center'><FaHandshake /></p>
+                    <p className='text-5xl font-bold my-4'>50+</p>
+                    <p className='text-xl text-blue-400 font-bold'>Served</p>
                 </div>
                 <div className='py-12 lg:py-0'>
-                    <p className='text-6xl text-blue-400 flex justify-center'><FaTasks /></p>
-                    <p className='text-5xl font-bold my-4'>120+</p>
-                    <p className='text-xl text-blue-400 font-bold'>Complete Project</p>
+                    <p className='text-6xl text-blue-400 flex justify-center'><FaMoneyBillAlt /></p>
+                    <p className='text-5xl font-bold my-4'>35M+</p>
+                    <p className='text-xl text-blue-400 font-bold'>Annual Revenue</p>
                 </div>
                 <div className='pb-12 lg:pb-0'>
-                    <p className='text-6xl text-blue-400 flex justify-center'><FaUsers /></p>
-                    <p className='text-5xl font-bold my-4'>68+</p>
-                    <p className='text-xl text-blue-400 font-bold'>Happy Clients</p>
+                    <p className='text-6xl text-blue-400 flex justify-center'><FaCarCrash /></p>
+                    <p className='text-5xl font-bold my-4'>15+</p>
+                    <p className='text-xl text-blue-400 font-bold'>Car Parts</p>
                 </div>
                 <div>
                     <p className='text-6xl text-blue-400 flex justify-center'><FaStar /></p>

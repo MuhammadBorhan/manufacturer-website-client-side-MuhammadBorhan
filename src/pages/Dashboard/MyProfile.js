@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
+    const [profiles, setProfiles] = useState([]);
+    useEffect(() => {
+        const url = `http://localhost:5000/profile`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProfiles(data))
+
+    }, []);
 
     const handleProfile = event => {
         event.preventDefault();
@@ -43,6 +51,18 @@ const MyProfile = () => {
                     <input type="text" name='linkdien' placeholder="LinkedIn Link" className="input input-bordered w-full max-w-xs" />
                     <input type="submit" value='Update' className="btn input-bordered w-full max-w-xs" />
                 </form>
+            </div>
+            <div>
+                <div>
+                    {
+                        profiles.map(profile => <div key={profile._id} className='bg-slate-600 p-4 text-white'>
+                            <div>
+                                <p className='flex justify-center items-center gap-1'><span>{profile.name}</span></p>
+                                <p>{profile.email}</p>
+                            </div>
+                        </div>)
+                    }
+                </div>
             </div>
         </div>
     );

@@ -119,6 +119,7 @@ const BuyNow = () => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
+                    <p><span className='font-bold'>Minimum Quantity:</span> <span className='text-xl font-bold'>20</span></p>
                     <p><span className='font-bold'>Available Quantity:</span> <span className='text-xl font-bold'>{avlbQuantity}</span></p>
                     <p><span className='font-bold'>Order Quantity:</span> <span className='font-bold text-xl'>{order}</span></p>
                     <p><button onClick={() => handleReduce(product)} className='btn btn-sm text-3xl'>-</button><span className='text-2xl font-bold mx-3'> </span><button onClick={() => handleIncrease(product)} className='btn btn-sm text-3xl'>+</button></p>

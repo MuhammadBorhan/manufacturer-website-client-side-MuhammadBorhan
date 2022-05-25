@@ -1,5 +1,7 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 import Loading from '../Loading/Loading';
 import TableRow from '../TableRow/TableRow';
@@ -7,14 +9,28 @@ import TableRow from '../TableRow/TableRow';
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [myorders, setMyorders] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
         const email = user.email;
         const url = `http://localhost:5000/orders?email=${email}`;
-        fetch(url)
-            .then(res => res.json())
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                console.log(res)
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth);
+                    localStorage.removeItem('accessToken');
+                    navigate('/')
+                }
+                return res.json()
+            })
             .then(data => setMyorders(data))
 
-    }, [user]);
+    }, [user, navigate]);
 
     const handleDelete = id => {
         const url = `http://localhost:5000/myorder/${id}`;

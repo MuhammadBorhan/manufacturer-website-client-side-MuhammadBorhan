@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
+import useToken from '../CustomHook/useToken';
 
 const Register = () => {
     const [user] = useAuthState(auth);
@@ -13,13 +14,15 @@ const Register = () => {
     const [createUserWithEmailAndPassword, cUser, loading, error] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate();
+    const [token] = useToken(cUser || gUser);
 
-    if (user) {
-        navigate('/home')
-    }
 
     if (loading || gLoading || updating) {
         return <Loading></Loading>
+    }
+
+    if (token) {
+        navigate('/home')
     }
 
     let errorMessage;
@@ -30,7 +33,7 @@ const Register = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name })
-        navigate('/home')
+        // navigate('/home')
     }
     return (
         <div className='flex items-center h-screen justify-center'>

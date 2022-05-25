@@ -3,7 +3,24 @@ import useProducts from '../CustomHook/useProducts';
 import Loading from '../Loading/Loading';
 
 const ManageProducts = () => {
-    const [products] = useProducts();
+    const [products, setProducts] = useProducts();
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = `http://localhost:5000/product/${id}`;
+            fetch(url, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const rest = products.filter(product => product._id !== id);
+                    console.log(rest)
+                    setProducts(rest);
+                })
+        }
+    }
     return (
         <div>
             <h4 className='mt-5 mb-3'><span className='text-2xl font-bold'>Total Manage Products:</span> <span className='text-3xl font-bold text-purple-900'>{products.length}</span></h4>
@@ -15,6 +32,7 @@ const ManageProducts = () => {
                             <div className='mt-4'>
                                 <p>{order.name}</p>
                                 <p>{order.email}</p>
+                                <button onClick={() => handleDelete(order._id)} className='btn btn-error block mx-auto mt-6 font-bold'>Delete</button>
                             </div>
                         </div>
                     </div>)

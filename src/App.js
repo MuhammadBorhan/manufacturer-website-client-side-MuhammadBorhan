@@ -20,6 +20,7 @@ import AllOrders from './pages/Dashboard/AllOrders';
 import AddProducts from './pages/Dashboard/AddProducts';
 import ManageProducts from './pages/Dashboard/ManageProducts';
 import AllUsers from './pages/Dashboard/AllUsers';
+import PrivateAdmin from './pages/PrivateRoute/PrivateAdmin';
 function App() {
   return (
     <div>
@@ -33,10 +34,10 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
-          <Route path='allorder' element={<AllOrders></AllOrders>}></Route>
-          <Route path='addproducts' element={<AddProducts></AddProducts>}></Route>
-          <Route path='allproducts' element={<ManageProducts></ManageProducts>}></Route>
-          <Route path='allusers' element={<AllUsers></AllUsers>}></Route>
+          <Route path='allorder' element={<PrivateAdmin><AllOrders></AllOrders></PrivateAdmin>}></Route>
+          <Route path='addproducts' element={<PrivateAdmin><AddProducts></AddProducts></PrivateAdmin>}></Route>
+          <Route path='allproducts' element={<PrivateAdmin><ManageProducts></ManageProducts></PrivateAdmin>}></Route>
+          <Route path='allusers' element={<PrivateAdmin><AllUsers></AllUsers></PrivateAdmin>}></Route>
         </Route>
         <Route path='/buynow/:id' element={<PrivateRoute><BuyNow></BuyNow></PrivateRoute>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

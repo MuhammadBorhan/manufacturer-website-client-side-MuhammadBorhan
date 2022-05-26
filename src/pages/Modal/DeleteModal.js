@@ -13,7 +13,7 @@ const DeleteModal = ({ deleting, setDeleting }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                toast.success('Successfully Delete');
+                toast.success('Successfully Deleted');
                 const rest = products.filter(product => product._id !== id);
                 setProducts(rest);
                 setDeleting(null)
@@ -25,9 +25,9 @@ const DeleteModal = ({ deleting, setDeleting }) => {
             <input type="checkbox" id="Delete-confirm-modal" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
-                    <h3 class="font-bold text-xl text-primary mb-3">{`Are your sure you want to delete ${name}`}</h3>
-                    <button onClick={() => handleDelete(_id)} className='btn btn-error text-white font-bold'>Delete</button>
+                    <h3 class="font-bold text-xl text-primary mb-3">{`Are your sure you want to delete ${name}?`}</h3>
                     <div class="modal-action">
+                        <button onClick={() => handleDelete(_id)} className='btn btn-error text-white font-bold'>Delete</button>
                         <label for="Delete-confirm-modal" class="btn">Cancel</label>
                     </div>
                 </div>

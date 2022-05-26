@@ -2,14 +2,17 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../Firebase/firebase.init';
 import Loading from '../Loading/Loading';
+import DeleteOrderModal from '../TableRow/DeleteOrderModal';
 import TableRow from '../TableRow/TableRow';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [myorders, setMyorders] = useState([]);
     const navigate = useNavigate();
+    const [orderDelete, setOrderDelete] = useState(null);
     useEffect(() => {
         const email = user.email;
         const url = `http://localhost:5000/orders?email=${email}`;
@@ -41,8 +44,9 @@ const MyOrder = () => {
             .then(data => {
                 console.log(data);
                 const rest = myorders.filter(product => product._id !== id);
-                console.log(rest)
+                toast.success('Order Successfully Deleted');
                 setMyorders(rest);
+                setOrderDelete(null)
             })
     }
     return (
@@ -55,12 +59,15 @@ const MyOrder = () => {
                     <tbody>
                         <div>
                             {
-                                myorders.length === 0 ? <p className='text-center'><Loading></Loading></p> : myorders.map((myorder, index) => <TableRow key={myorder._id} handleDelete={handleDelete} index={index} myorder={myorder}></TableRow>)
+                                myorders.length === 0 ? <p className='text-center'><Loading></Loading></p> : myorders.map((myorder, index) => <TableRow key={myorder._id} setOrderDelete={setOrderDelete} handleDelete={handleDelete} index={index} myorder={myorder}></TableRow>)
                             }
                         </div>
                     </tbody>
                 </table>
             </div >
+            {
+                orderDelete && <DeleteOrderModal orderDelete={orderDelete} handleDelete={handleDelete}></DeleteOrderModal>
+            }
         </div>
     );
 };

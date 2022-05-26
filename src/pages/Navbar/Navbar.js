@@ -37,14 +37,14 @@ const Navbar = () => {
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-3xl">Automotive Parts</Link>
             </div>
-            <div className="navbar-end hidden lg:flex">
+            <div className="navbar-center ml-0 lg:ml-32 hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
             </div>
-            {/*  <div>
-                <p className='text-xl text-indigo-600 font-bold'>{user?.displayName}</p>
-            </div> */}
+            <div className='navbar-end'>
+                <p className='text-xl text-indigo-600 font-bold'>{user?.name || user?.displayName}</p>
+            </div>
         </div>
     );
 };

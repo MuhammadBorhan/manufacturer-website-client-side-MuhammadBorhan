@@ -21,6 +21,8 @@ import AddProducts from './pages/Dashboard/AddProducts';
 import ManageProducts from './pages/Dashboard/ManageProducts';
 import AllUsers from './pages/Dashboard/AllUsers';
 import PrivateAdmin from './pages/PrivateRoute/PrivateAdmin';
+import MoneyPayment from './pages/Dashboard/MoneyPayment';
+
 function App() {
   return (
     <div>
@@ -32,6 +34,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
           <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path='payment/:id' element={<MoneyPayment></MoneyPayment>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='allorder' element={<PrivateAdmin><AllOrders></AllOrders></PrivateAdmin>}></Route>

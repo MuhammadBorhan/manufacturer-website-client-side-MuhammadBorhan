@@ -1,10 +1,17 @@
-# Getting Started with Create React App
+# Automotive Parts Manufacturing
+# Description
+I feel much better now than I was scared at the begining of this assignment. this assignment was not difficult but it was tricky. Alhamdulillah I was able to do it even then.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live site link: https://scintillating-quokka-d477fd.netlify.app/
 
-## Available Scripts
-
-In the project directory, you can run:
+## Features and functionality.
+* only six items for car parts in Home page and All parts in Manage All products route.
+* Create Register route for new user and login route for already user.
+* Make private route for Dashboard and Private Admin route for only admin permission route.
+* Blogs route for five question with answer and portfolio route created.
+* Create summary section and customers review section in home page. customer reviews dynamically.
+* Add Extra two section in home page.
+* Use react toastify and react query.
 
 ### `npm start`
 

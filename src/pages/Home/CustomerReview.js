@@ -5,7 +5,7 @@ import Loading from '../Loading/Loading';
 const CustomerReview = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/review`;
+        const url = `https://thawing-harbor-39407.herokuapp.com/review`;
         fetch(url)
             .then(res => res.json())
             .then(data => setReviews(data))

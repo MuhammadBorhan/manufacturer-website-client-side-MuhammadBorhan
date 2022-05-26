@@ -8,7 +8,7 @@ const AddReview = () => {
         const description = event.target.description.value;
         const addReviews = { value, description };
 
-        const url = `http://localhost:5000/review`;
+        const url = `https://thawing-harbor-39407.herokuapp.com/review`;
         fetch(url, {
             method: "POST",
             headers: {

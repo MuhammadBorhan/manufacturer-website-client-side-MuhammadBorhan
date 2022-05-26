@@ -4,7 +4,7 @@ import Loading from '../Loading/Loading';
 const AllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/order`;
+        const url = `https://thawing-harbor-39407.herokuapp.com/order`;
         fetch(url)
             .then(res => res.json())
             .then(data => setAllOrders(data))

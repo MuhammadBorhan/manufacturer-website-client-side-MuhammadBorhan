@@ -8,7 +8,7 @@ const MyProfile = () => {
     const [profiles, setProfiles] = useState([]);
     const [relode, setRelode] = useState(false);
     useEffect(() => {
-        const url = `http://localhost:5000/profile`;
+        const url = `https://thawing-harbor-39407.herokuapp.com/profile`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProfiles(data))
@@ -27,7 +27,7 @@ const MyProfile = () => {
 
         const updateProfile = { name, email, education, district, phone, linkdien };
 
-        const url = `http://localhost:5000/profile`;
+        const url = `https://thawing-harbor-39407.herokuapp.com/profile`;
         fetch(url, {
             method: "POST",
             headers: {

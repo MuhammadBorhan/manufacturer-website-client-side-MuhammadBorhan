@@ -6,7 +6,7 @@ const DeleteModal = ({ deleting, setDeleting }) => {
     const { name, _id } = deleting;
     const [products, setProducts] = useProducts();
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://thawing-harbor-39407.herokuapp.com/product/${id}`;
         fetch(url, {
             method: "DELETE"
         })

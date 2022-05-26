@@ -1,14 +1,17 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
-const ChechoutForm = () => {
+const ChechoutForm = ({ order }) => {
     const stripe = useStripe()
     const element = useElements()
     const [cardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
+
+    const { price } = order;
+
     useEffect(() => {
 
-    }, []);
+    }, [price]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();

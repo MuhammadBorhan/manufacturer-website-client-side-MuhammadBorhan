@@ -88,9 +88,10 @@ const BuyNow = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const quantity = event.target.quantity.value;
+        const price = event.target.price.value;
         const address = event.target.address.value;
         const phone = event.target.phone.value;
-        const purchase = { product, name, email, quantity, address, phone }
+        const purchase = { product, name, email, quantity, price, address, phone }
 
         fetch('https://thawing-harbor-39407.herokuapp.com/order', {
             method: 'POST',
@@ -139,6 +140,7 @@ const BuyNow = () => {
                             <input type="text" name='name' value={user.displayName} className="input input-bordered w-full max-w-xs text-xl font-bold" />
                             <input type="email" name='email' disabled value={user.email} className="input input-bordered w-full max-w-xs text-xl font-bold" />
                             <input type="text" name='quantity' value={'Selected Quantity ' + order} className="input input-bordered text-xl font-bold w-full max-w-xs" />
+                            <input type="text" name='price' value={'$' + price * order} className="input input-bordered w-full max-w-xs" />
                             <input type="text" name='address' placeholder="Address" className="input input-bordered w-full max-w-xs" />
                             <input type="text" name='phone' placeholder="Phone" className="input input-bordered w-full max-w-xs" />
                             <input type="submit" value='Confirm' className="btn btn-primary input-bordered w-full max-w-xs" />

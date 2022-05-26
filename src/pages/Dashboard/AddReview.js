@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const AddReview = () => {
     const handleReview = event => {
@@ -17,7 +18,7 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                toast.success('Review successfully added.')
                 event.target.reset()
             })
     }

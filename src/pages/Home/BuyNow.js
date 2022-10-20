@@ -17,7 +17,7 @@ const BuyNow = () => {
 
 
     useEffect(() => {
-        const url = `https://thawing-harbor-39407.herokuapp.com/product/${id}`;
+        const url = `http://localhost:5000/product/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -39,7 +39,7 @@ const BuyNow = () => {
             exist.avlbQuantity = parseInt(exist.avlbQuantity) - 1;
             const increseQuantity = exist.avlbQuantity;
 
-            const url = `https://thawing-harbor-39407.herokuapp.com/product/${id}`;
+            const url = `http://localhost:5000/product/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -66,7 +66,7 @@ const BuyNow = () => {
         if (exist) {
             exist.avlbQuantity = parseInt(exist.avlbQuantity) + 1;
             const reduceQuantity = exist.avlbQuantity;
-            const url = `https://thawing-harbor-39407.herokuapp.com/product/${id}`;
+            const url = `http://localhost:5000/product/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -93,7 +93,7 @@ const BuyNow = () => {
         const phone = event.target.phone.value;
         const purchase = { product, name, email, quantity, price, address, phone }
 
-        fetch('https://thawing-harbor-39407.herokuapp.com/order', {
+        fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

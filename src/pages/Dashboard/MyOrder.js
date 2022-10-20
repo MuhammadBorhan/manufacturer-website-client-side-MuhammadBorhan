@@ -15,7 +15,7 @@ const MyOrder = () => {
     const [orderDelete, setOrderDelete] = useState(null);
     useEffect(() => {
         const email = user.email;
-        const url = `https://thawing-harbor-39407.herokuapp.com/orders?email=${email}`;
+        const url = `http://localhost:5000/orders?email=${email}`;
         fetch(url, {
             method: 'GET',
             headers: {
@@ -36,7 +36,7 @@ const MyOrder = () => {
     }, [user, navigate]);
 
     const handleDelete = id => {
-        const url = `https://thawing-harbor-39407.herokuapp.com/myorder/${id}`;
+        const url = `http://localhost:5000/myorder/${id}`;
         fetch(url, {
             method: "DELETE"
         })
@@ -59,7 +59,7 @@ const MyOrder = () => {
                     <tbody>
                         <div>
                             {
-                                myorders.length === 0 ? <p className='text-center'><Loading></Loading></p> : myorders.map((myorder, index) => <TableRow key={myorder._id} setOrderDelete={setOrderDelete} handleDelete={handleDelete} index={index} myorder={myorder}></TableRow>)
+                                myorders.length === 0 ? <p className='left'><Loading></Loading></p> : myorders.map((myorder, index) => <TableRow key={myorder._id} setOrderDelete={setOrderDelete} handleDelete={handleDelete} index={index} myorder={myorder}></TableRow>)
                             }
                         </div>
                     </tbody>

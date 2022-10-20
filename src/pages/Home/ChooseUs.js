@@ -1,8 +1,14 @@
 import React from 'react';
+import CountUp from 'react-countup';
+import ScrollTrigger from 'react-scroll-trigger';
 
 const ChooseUs = () => {
     return (
-        <div className='py-8'>
+        <div className='py-8' 
+        data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500"
+        >
             <div className='w-3/4 mx-auto text-center'>
                 <h2 className='text-indigo-600 text-3xl font-bold mb-5'>Why Choose Us</h2>
                 <p className='text-xl'>Automotive parts manufacturing utilizes ongoing employee training, automation, continuous process improvement and innovation to maximize the quantity, reliability, and cost-effectiveness of your components. We are uniquely positioned to address your most challenging product part approval process and failure modes and effects component mandates.</p>

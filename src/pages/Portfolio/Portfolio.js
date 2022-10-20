@@ -1,5 +1,5 @@
 import React from 'react';
-import myself from '../../images/myself.png';
+import myself from '../../images/borhan.png';
 import './Portfolio.css';
 
 const Portfolio = () => {
@@ -7,10 +7,10 @@ const Portfolio = () => {
         <div className='px-12 py-8'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
                 <div className="card card-compact bg-base-100 shadow-xl">
-                    <figure><img src={myself} alt="Shoes" /></figure>
+                    <figure><img width={400} src={myself} alt="Shoes" /></figure>
                     <div className="text-center p-4">
-                        <p><span className='text-2xl font-bold'>Name:</span> <span className='text-xl font-bold'>Md Borhan Uddin</span></p>
-                        <p><span className='text-2xl font-bold'>Email:</span> <span className='text-xl font-bold'>mdborhanuddinmajumder058@gmail.com</span></p>
+                        <p> <span className='text-xl font-bold'>Md Borhan Uddin</span></p>
+                        <p><span className='text-xl font-bold'>mdborhanuddinmajumder058@gmail.com</span></p>
                     </div>
                 </div>
                 <div className='text-center'>

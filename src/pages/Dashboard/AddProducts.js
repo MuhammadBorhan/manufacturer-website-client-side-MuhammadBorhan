@@ -17,7 +17,7 @@ const AddProducts = () => {
         const img = event.target.img.value;
 
         const addItem = { name, email, price, minQuantity, avlbQuantity, description, img };
-        const url = `https://thawing-harbor-39407.herokuapp.com/product`;
+        const url = `http://localhost:5000/product`;
         fetch(url, {
             method: "POST",
             headers: {
